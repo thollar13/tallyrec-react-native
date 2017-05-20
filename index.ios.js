@@ -15,6 +15,18 @@ import {
 import { Authentication } from './app/containers'
 
 export default class TallyRecReact extends Component {
+
+  // componentWillMount() {
+  //   function fetchData() {
+  //     return (dispatch) => fetch('data_endpoint')
+  //       .then(res => res.json())
+  //       .then(json => dispatch({
+  //           type: 'fetchData',
+  //           data: json
+  //       }))
+  //   }
+  // }
+
   render() {
     return (
       <View style={styles.container}>

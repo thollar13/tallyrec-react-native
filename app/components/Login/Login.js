@@ -7,9 +7,14 @@ class Login extends Component {
       <View>
         <Text style={styles.h1}>Welcome to TallyRec</Text>
         <Text>Phone #:</Text>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+        />
         <Text>Password:</Text>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          secureTextEntry={true}
+        />
         <TouchableOpacity>
           <Text style={styles.button}>LOGIN</Text>
         </TouchableOpacity>
