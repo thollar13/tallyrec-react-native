@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 
-import { Login, Register } from '../'
+import { Login, Register } from '../../components'
 
 class Authentication extends Component {
 

@@ -17,7 +17,7 @@ class Login extends Component {
           onPress={this.props.registerView}
           style={styles.link}
         >
-          <Text>Register</Text>
+          <Text>Register Now</Text>
         </TouchableOpacity>
       </View>
     )
