@@ -1,36 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-class Login extends Component {
+class Register extends Component {
   render() {
     return (
       <View>
-        <Text
-          style={styles.h1}
-        >
-          Welcome to TallyRec
-        </Text>
+        <Text style={styles.h1}>Create Account</Text>
         <Text>Phone #:</Text>
-        <TextInput
-          style={styles.input}
-        />
+        <TextInput style={styles.input} />
         <Text>Password:</Text>
-        <TextInput
-          style={styles.input}
-        />
+        <TextInput style={styles.input} />
         <TouchableOpacity>
-          <Text
-            style={styles.button}
-          >
-            LOGIN
+          <Text style={styles.button}>
+            REGISTER
           </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={this.props.loginView}
+          style={styles.link}
+        >
+          <Text>Already registered? Login</Text>
         </TouchableOpacity>
       </View>
     )
   }
 }
 
-export default Login
+Register.propTypes = {
+  loginView: PropTypes.func.isRequired,
+}
+
+export default Register
 
 const styles = StyleSheet.create({
   h1: {
@@ -54,5 +54,10 @@ const styles = StyleSheet.create({
     height: 40,
     width: 275,
     marginBottom: 20,
+  },
+  link: {
+    marginTop: 20,
+    alignItems: 'center',
+    width: 275,
   }
 })

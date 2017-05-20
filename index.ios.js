@@ -12,13 +12,13 @@ import {
   View
 } from 'react-native';
 
-import Login from './app/containers'
+import { Authentication } from './app/containers'
 
 export default class TallyRecReact extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Login />
+        <Authentication />
       </View>
     );
   }
