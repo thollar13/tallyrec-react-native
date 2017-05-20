@@ -6,19 +6,17 @@ class Game extends Component {
     return (
       <View style={styles.gameCard}>
         <View style={{flex: 1, flexDirection: 'row'}}>
-          <View style={{width: 137.5, height: 30, backgroundColor: '#333'}}>
-            <Text style={{color: '#fff', padding: 5, textAlign: 'left'}}>Next Game</Text>
+          <View style={{width: 137.5, height: 30, backgroundColor: '#333', paddingLeft: 15}}>
+            <Text style={{color: '#fff', textAlign: 'left', lineHeight: 28}}>Next Game</Text>
           </View>
-          <View style={{width: 137.5, height: 30, backgroundColor: '#333'}}>
-            <Text style={{color: '#fff', padding: 5, textAlign: 'right'}}>4/27 @ 4:00</Text>
+          <View style={{width: 137.5, height: 30, backgroundColor: '#333', paddingRight: 15}}>
+            <Text style={{color: '#fff', textAlign: 'right', lineHeight: 28}}>4/27 @ 4:00</Text>
           </View>
         </View>
         <View style={styles.gameContent}>
-          <Text>Blood, Sweat, & Beers</Text>
-        </View>
-        <View style={styles.gameContent}>
-          <Text>Tom Brown Park</Text>
-          <Text>Field #5</Text>
+          <Text style={{fontSize: 16, marginBottom: 10, marginTop: -20}}>Blood, Sweat, & Beers</Text>
+          <Text style={{fontSize: 16}}>Tom Brown Park</Text>
+          <Text style={{fontSize: 16}}>Field #5</Text>
         </View>
       </View>
     )
@@ -40,6 +38,6 @@ const styles = StyleSheet.create({
   gameContent: {
     flex: 1,
     flexDirection: 'column',
-    paddingLeft: 25,
+    paddingLeft: 15,
   }
 })

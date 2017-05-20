@@ -35,6 +35,7 @@ class Authentication extends Component {
             loginView={this.loginView}
           />
         }
+        <Game />
       </View>
     )
   }
