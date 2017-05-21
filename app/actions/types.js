@@ -1,2 +1,2 @@
 /// define all types
-export const LOGGED_IN = 'LOGGED_IN'
+export const LOGIN_USER = 'LOGIN_USER'
