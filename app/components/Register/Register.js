@@ -22,7 +22,7 @@ class Register extends Component {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={this.props.loginView}
+          onPress={this.props.showLoginView}
           style={styles.link}
         >
           <Text>Already registered? Login</Text>
@@ -33,7 +33,7 @@ class Register extends Component {
 }
 
 Register.propTypes = {
-  loginView: PropTypes.func.isRequired,
+  showLoginView: PropTypes.func.isRequired,
 }
 
 export default Register

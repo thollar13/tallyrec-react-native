@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+
+import styles from './styles'
 
 class Login extends Component {
   render() {
@@ -15,11 +17,13 @@ class Login extends Component {
           style={styles.input}
           secureTextEntry={true}
         />
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={ () => {this.props.loginUser()} }
+        >
           <Text style={styles.button}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={this.props.registerView}
+          onPress={this.props.showRegisterView}
           style={styles.link}
         >
           <Text>Register Now</Text>
@@ -30,37 +34,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  registerView: PropTypes.func.isRequired,
+  loginUser: PropTypes.func,
+  showRegisterView: PropTypes.func.isRequired,
 }
 
 export default Login
-
-const styles = StyleSheet.create({
-  h1: {
-    fontSize: 24,
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  button: {
-    backgroundColor: '#333',
-    color: 'white',
-    height: 40,
-    lineHeight: 40,
-    marginTop: 5,
-    textAlign: 'center',
-    width: 275
-  },
-  input: {
-    borderColor: 'black',
-    borderWidth: 1,
-    textAlign: 'center',
-    height: 40,
-    width: 275,
-    marginBottom: 20,
-  },
-  link: {
-    marginTop: 20,
-    alignItems: 'center',
-    width: 275,
-  }
-})

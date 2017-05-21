@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
-import { View } from 'react-native'
+import React, { Component, PropTypes } from 'react'
+import { View, Text } from 'react-native'
 
-import { Game, Login, Register } from '../../components'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { ActionCreators } from '../../actions'
+
+import { Login, Register } from '../../components'
 
 class Authentication extends Component {
 
@@ -12,13 +16,17 @@ class Authentication extends Component {
     }
   }
 
-  registerView = () => {
+  loginUser = () => {
+    this.props.loginUser()
+  }
+
+  showRegisterView = () => {
     this.setState ({
       isRegistered: false
     })
   }
 
-  loginView = () => {
+  showLoginView = () => {
     this.setState ({
       isRegistered: true
     })
@@ -27,18 +35,27 @@ class Authentication extends Component {
   render() {
     return (
       <View>
+        <Text>{this.props.loggedIn ? 'User is logged in' : 'User not logged in'}</Text>
         {this.state.isRegistered ?
           <Login
-            registerView={this.registerView}
+            loginUser={this.loginUser}
+            showRegisterView={this.showRegisterView}
           /> :
           <Register
-            loginView={this.loginView}
+            showLoginView={this.showLoginView}
           />
         }
-        <Game />
       </View>
     )
   }
 }
 
-export default Authentication
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ActionCreators, dispatch)
+}
+
+export default connect((state) => {
+  return {
+    loggedIn: state.loginUser
+  }
+}, mapDispatchToProps)(Authentication)

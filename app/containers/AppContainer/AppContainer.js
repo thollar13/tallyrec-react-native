@@ -4,22 +4,17 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
 
-class AppContainer extends Component {
+import { Authentication, Dashboard } from '../'
 
-  logIn() {
-    this.props.loginUser()
-  }
+class AppContainer extends Component {
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          App Container
-          {this.props.loggedIn}
-        </Text>
-        <TouchableHighlight onPress={ () => {this.logIn() }}>
-          <Text>Login</Text>
-        </TouchableHighlight>
+        {this.props.loggedIn ?
+          <Dashboard /> :
+          <Authentication />
+        }
       </View>
     );
   }
