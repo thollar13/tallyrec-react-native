@@ -35,7 +35,6 @@ class Authentication extends Component {
   render() {
     return (
       <View>
-        <Text>{this.props.loggedIn ? 'User is logged in' : 'User not logged in'}</Text>
         {this.state.isRegistered ?
           <Login
             loginUser={this.loginUser}
