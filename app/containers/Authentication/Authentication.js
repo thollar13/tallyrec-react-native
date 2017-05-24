@@ -16,11 +16,6 @@ class Authentication extends Component {
     }
   }
 
-  loginUser = (credentials) => {
-    console.log(credentials)
-    this.props.loginUser()
-  }
-
   login = (phone_number, password) => {
     this.props.login(phone_number, password)
   }
@@ -42,7 +37,6 @@ class Authentication extends Component {
       <View>
         {this.state.isRegistered ?
           <Login
-            loginUser={this.loginUser}
             login={this.login}
             showRegisterView={this.showRegisterView}
           /> :

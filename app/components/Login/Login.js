@@ -57,19 +57,23 @@ class Login extends Component {
       <View>
         <Text style={styles.h1}>Welcome to TallyRec</Text>
 
-        <Text>Phone #:</Text>
-        <TextInput
-          onChangeText={(number) => this.validatePhoneNumber(number)}
-          autoCapitalize = 'none'
-          style={styles.input}
-        />
+        <View style={styles.inputBorder}>
+          <TextInput
+            onChangeText={(number) => this.validatePhoneNumber(number)}
+            autoCapitalize = 'none'
+            placeholder="Phone Number"
+            style={styles.input}
+          />
+        </View>
 
-        <Text>Password:</Text>
-        <TextInput
-          onChangeText={(text) => this.validatePassword(text)}
-          style={styles.input}
-          secureTextEntry={true}
-        />
+        <View style={styles.inputBorder}>
+          <TextInput
+            onChangeText={(text) => this.validatePassword(text)}
+            style={styles.input}
+            secureTextEntry={true}
+            placeholder="Password"
+          />
+        </View>
 
         <Text style={styles.error}>
           {this.state.error}
@@ -94,7 +98,6 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  loginUser: PropTypes.func,
   login: PropTypes.func,
   showRegisterView: PropTypes.func.isRequired,
 }

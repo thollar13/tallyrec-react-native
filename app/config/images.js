@@ -1,5 +1,5 @@
 const images = {
-  logo: require('../images/tallyrec-logo.png')
+  tallyrecBackground: require('./tallyrec-bg.jpg')
 }
 
 export default images
