@@ -7,11 +7,11 @@ export function loginUser() {
   }
 }
 
-export function login() {
+export function login(phone_number, password) {
   return(dispatch, getState) => {
     const params = {
-      email: 'thomas@whiteboard.is',
-      password: 'thomas123',
+      email: phone_number,
+      password: password,
     }
     return Api.post('/auth', params).then(resp => {
       console.log(resp)

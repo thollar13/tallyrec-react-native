@@ -12,7 +12,7 @@ class Authentication extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isRegistered: false
+      isRegistered: true
     }
   }
 
@@ -21,8 +21,8 @@ class Authentication extends Component {
     this.props.loginUser()
   }
 
-  login = () => {
-    this.props.login()
+  login = (phone_number, password) => {
+    this.props.login(phone_number, password)
   }
 
   showRegisterView = () => {
@@ -61,6 +61,6 @@ function mapDispatchToProps(dispatch) {
 
 export default connect((state) => {
   return {
-    loggedIn: state.loginUser
+    loggedIn: state.loginUser,
   }
 }, mapDispatchToProps)(Authentication)

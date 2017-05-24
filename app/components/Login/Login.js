@@ -10,6 +10,8 @@ class Login extends Component {
     this.state = {
       phoneNumberValid: false,
       passwordValid: false,
+      phoneNumber: '',
+      password: '',
       error: '',
     }
   }
@@ -20,20 +22,25 @@ class Login extends Component {
   validatePhoneNumber = (number) => {
     let validation = (number.length > 8) ? true : false
     this.setState({
-      phoneNumberValid: validation
+      phoneNumberValid: validation,
+      phoneNumber: number,
     })
   }
 
   validatePassword = (text) => {
     let validation = (text.length > 7) ? true : false
     this.setState({
-      passwordValid: validation
+      passwordValid: validation,
+      password: text,
     })
   }
 
-  checkLoginValidations = () => {
+  login = () => {
     if (this.state.phoneNumberValid && this.state.passwordValid) {
-      this.props.login()
+      this.props.login(
+        this.state.phoneNumber,
+        this.state.password
+      )
     } else if (!this.state.phoneNumberValid) {
       this.setState({
         error: 'You must enter a valid phone number'
@@ -53,6 +60,7 @@ class Login extends Component {
         <Text>Phone #:</Text>
         <TextInput
           onChangeText={(number) => this.validatePhoneNumber(number)}
+          autoCapitalize = 'none'
           style={styles.input}
         />
 
@@ -68,7 +76,7 @@ class Login extends Component {
         </Text>
 
         <TouchableOpacity
-          onPress={ () => {this.checkLoginValidations()} }
+          onPress={ (credentials) => {this.login(credentials)} }
         >
           <Text style={styles.button}>LOGIN</Text>
         </TouchableOpacity>
