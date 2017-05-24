@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
 
-import { Login, Register } from '../../components'
+import { Login, Register, Game } from '../../components'
 
 class Dashboard extends Component {
 
@@ -17,6 +17,7 @@ class Dashboard extends Component {
     return (
       <View>
         <Text>Team Dashboard</Text>
+        <Game />
       </View>
     )
   }

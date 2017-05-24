@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -34,7 +34,7 @@ class Authentication extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         {this.state.isRegistered ?
           <Login
             login={this.login}
@@ -58,3 +58,12 @@ export default connect((state) => {
     loggedIn: state.loginUser,
   }
 }, mapDispatchToProps)(Authentication)
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  }
+});

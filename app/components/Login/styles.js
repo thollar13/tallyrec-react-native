@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   h1: {
     fontSize: 24,
     marginBottom: 20,
@@ -17,6 +22,7 @@ const styles = StyleSheet.create({
   input: {
     height: 30,
     fontSize: 16,
+    textAlign: 'center',
     width: 275,
   },
   inputBorder: {

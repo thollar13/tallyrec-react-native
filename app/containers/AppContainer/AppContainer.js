@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { Text, TouchableHighlight, View } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
@@ -10,8 +10,8 @@ class AppContainer extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        {this.props.loggedIn ?
+      <View>
+        {!this.props.loggedIn ?
           <Dashboard /> :
           <Authentication />
         }
@@ -30,12 +30,3 @@ export default connect((state) => {
     loggedIn: state.user.loggedIn
   }
 }, mapDispatchToProps)(AppContainer)
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFF',
-  },
-})
