@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux';
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -18,6 +19,9 @@ class Dashboard extends Component {
       <View>
         <Text>Team Dashboard</Text>
         <Game />
+        <Text onPress={() => Actions.refresh({key: 'drawer', open: value => !value }) }>
+          Show Menu
+        </Text>
       </View>
     )
   }

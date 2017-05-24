@@ -24,7 +24,7 @@ export function login(phone_number, password) {
     return Api.post('/auth', params).then(resp => {
       console.log(resp)
       dispatch(loginUser(resp.authToken))
-      Actions.dashboard()
+      Actions.drawer()
     }).catch( (ex) => {
       console.log('error at login: ' + ex)
     })

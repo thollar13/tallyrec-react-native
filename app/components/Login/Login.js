@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import styles from './styles'
 
 class Login extends Component {
