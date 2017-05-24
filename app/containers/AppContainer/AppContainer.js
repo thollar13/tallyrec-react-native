@@ -27,7 +27,7 @@ function mapDispatchToProps(dispatch) {
 
 export default connect((state) => {
   return {
-    loggedIn: state.loginUser
+    loggedIn: state.user.loggedIn
   }
 }, mapDispatchToProps)(AppContainer)
 

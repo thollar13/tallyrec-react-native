@@ -5,11 +5,10 @@ class Register extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.h1}>{false ? 'Create Account' : 'Blood, Sweat & Beers'}</Text>
+        <Text style={styles.h1}>Create Account</Text>
         <Text>Phone #:</Text>
         <TextInput
           style={styles.input}
-          value={false ? '' : '85055609999'}
         />
         <Text>Password:</Text>
         <TextInput

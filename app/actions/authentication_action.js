@@ -7,6 +7,12 @@ export function loginUser() {
   }
 }
 
+export function loginError() {
+  return {
+    type: types.LOGIN_ERROR,
+  }
+}
+
 export function login(phone_number, password) {
   return(dispatch, getState) => {
     const params = {
