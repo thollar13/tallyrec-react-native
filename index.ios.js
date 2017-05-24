@@ -31,7 +31,7 @@ const App = () => (
     <RouterWithRedux>
       <Scene key="root" navigationBarStyle={styles.navBar} titleStyle={styles.navBarTitle}>
         <Scene key="authentication" component={Authentication} title="TALLYREC" />
-        <Scene key="dashboard" component={Dashboard} title="Dashboard"/>
+        <Scene key="dashboard" component={Dashboard} title="Dashboard" renderBackButton={()=>(null)}/>
       </Scene>
     </RouterWithRedux>
   </Provider>

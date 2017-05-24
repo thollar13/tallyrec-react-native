@@ -1,5 +1,6 @@
 import * as types from './types'
 import Api from '../config/api'
+import { Actions } from 'react-native-router-flux';
 
 export function loginUser(authToken) {
   return {
@@ -23,8 +24,9 @@ export function login(phone_number, password) {
     return Api.post('/auth', params).then(resp => {
       console.log(resp)
       dispatch(loginUser(resp.authToken))
+      Actions.dashboard()
     }).catch( (ex) => {
-      console.log(ex)
+      console.log('error at login: ' + ex)
     })
   }
 }
