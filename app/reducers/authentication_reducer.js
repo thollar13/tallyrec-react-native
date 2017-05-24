@@ -6,3 +6,9 @@ export const loginUser = createReducer(false, {
     return state = true
   }
 })
+
+export const login = createReducer({}, {
+  [types.LOGIN](state, action) {
+    let newState = {}
+  }
+})

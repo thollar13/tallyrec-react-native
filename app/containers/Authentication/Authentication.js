@@ -12,12 +12,17 @@ class Authentication extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isRegistered: true
+      isRegistered: false
     }
   }
 
-  loginUser = () => {
+  loginUser = (credentials) => {
+    console.log(credentials)
     this.props.loginUser()
+  }
+
+  login = () => {
+    this.props.login()
   }
 
   showRegisterView = () => {
@@ -38,6 +43,7 @@ class Authentication extends Component {
         {this.state.isRegistered ?
           <Login
             loginUser={this.loginUser}
+            login={this.login}
             showRegisterView={this.showRegisterView}
           /> :
           <Register

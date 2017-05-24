@@ -14,6 +14,9 @@ class Login extends Component {
     }
   }
 
+  /// error will be set via Redux in ComponentDidMount
+  /// if needed for incorrect password or phone
+
   validatePhoneNumber = (number) => {
     let validation = (number.length > 8) ? true : false
     this.setState({
@@ -30,7 +33,7 @@ class Login extends Component {
 
   checkLoginValidations = () => {
     if (this.state.phoneNumberValid && this.state.passwordValid) {
-      this.props.loginUser()
+      this.props.login()
     } else if (!this.state.phoneNumberValid) {
       this.setState({
         error: 'You must enter a valid phone number'
@@ -46,29 +49,37 @@ class Login extends Component {
     return (
       <View>
         <Text style={styles.h1}>Welcome to TallyRec</Text>
+
         <Text>Phone #:</Text>
         <TextInput
           onChangeText={(number) => this.validatePhoneNumber(number)}
           style={styles.input}
         />
+
         <Text>Password:</Text>
         <TextInput
           onChangeText={(text) => this.validatePassword(text)}
           style={styles.input}
           secureTextEntry={true}
         />
-        <Text style={{color: "red", textAlign: "center"}}>{this.state.error}</Text>
+
+        <Text style={styles.error}>
+          {this.state.error}
+        </Text>
+
         <TouchableOpacity
           onPress={ () => {this.checkLoginValidations()} }
         >
           <Text style={styles.button}>LOGIN</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
           onPress={this.props.showRegisterView}
           style={styles.link}
         >
           <Text>Register Now</Text>
         </TouchableOpacity>
+
       </View>
     )
   }
@@ -76,6 +87,7 @@ class Login extends Component {
 
 Login.propTypes = {
   loginUser: PropTypes.func,
+  login: PropTypes.func,
   showRegisterView: PropTypes.func.isRequired,
 }
 

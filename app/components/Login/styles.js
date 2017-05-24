@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     color: 'white',
     height: 40,
     lineHeight: 40,
-    marginTop: 5,
     textAlign: 'center',
     width: 275
   },
@@ -27,6 +26,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
     width: 275,
+  },
+  error: {
+    color: "red",
+    textAlign: "center"
   }
 })
 
