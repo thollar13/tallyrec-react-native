@@ -1,9 +1,10 @@
 import * as types from './types'
 import Api from '../config/api'
 
-export function loginUser() {
+export function loginUser(authToken) {
   return {
     type: types.LOGIN_USER,
+    authToken
   }
 }
 
@@ -21,7 +22,7 @@ export function login(phone_number, password) {
     }
     return Api.post('/auth', params).then(resp => {
       console.log(resp)
-      dispatch(loginUser())
+      dispatch(loginUser(resp.authToken))
     }).catch( (ex) => {
       console.log(ex)
     })

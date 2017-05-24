@@ -11,6 +11,7 @@ export const user = createReducer(state = initialState, {
   [types.LOGIN_USER](state, action) {
     return {
       ...state,
+      authToken: action.authToken,
       loggedIn: true,
     }
   }
