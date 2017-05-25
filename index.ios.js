@@ -31,7 +31,7 @@ const store = configureStore({})
 const App = () => (
   <Provider store={store}>
     <RouterWithRedux>
-      <Scene key="root" navigationBarStyle={styles.navBar} titleStyle={styles.navBarTitle}>
+      <Scene key="root" navigationBarStyle={styles.loginNav} titleStyle={styles.navBarTitle}>
         <Scene key="authentication" component={Authentication} title="TALLYREC" />
       </Scene>
       <Scene key="drawer" component={NavDrawer} open={false}  navigationBarStyle={styles.navBar} titleStyle={styles.navBarTitle}>
@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
   },
   barButtonTextStyle:{
     color:'#000'
+  },
+  loginNav: {
+    display: 'none'
   },
   barButtonIconStyle:{
     tintColor:'rgb(255,255,255)'

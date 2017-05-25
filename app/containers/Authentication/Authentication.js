@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { Image, View, Text } from 'react-native'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
 
 import { Login, Register } from '../../components'
+
+import styles from './styles'
 
 class Authentication extends Component {
 
@@ -35,15 +37,27 @@ class Authentication extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.isRegistered ?
-          <Login
-            login={this.login}
-            showRegisterView={this.showRegisterView}
-          /> :
-          <Register
-            showLoginView={this.showLoginView}
-          />
-        }
+        <Image
+          source={require('../../images/tallyrec-bg2.jpg')}
+          style={styles.backgroundImage}
+        >
+          <View style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+            <Image source={require('../../images/TallyRec-Logo.png')} style={styles.tallyRecLogo} />
+          </View>
+          {this.state.isRegistered ?
+            <Login
+              login={this.login}
+              loginMessage={this.props.user.loginMessage}
+              showRegisterView={this.showRegisterView}
+            /> :
+            <Register
+              showLoginView={this.showLoginView}
+            />
+          }
+        </Image>
       </View>
     )
   }
@@ -58,12 +72,3 @@ export default connect((state) => {
     user: state.user
   }
 }, mapDispatchToProps)(Authentication)
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  }
-});

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import styles from './styles'
 
 class Login extends Component {
@@ -53,9 +53,7 @@ class Login extends Component {
 
   render() {
     return (
-      <View>
-        <Text style={styles.h1}>Welcome to TallyRec</Text>
-
+      <View style={styles.loginWidth}>
         <View style={styles.inputBorder}>
           <TextInput
             onChangeText={(number) => this.validatePhoneNumber(number)}
@@ -75,22 +73,24 @@ class Login extends Component {
         </View>
 
         <Text style={styles.error}>
-          {this.state.error}
+          {this.props.loginMessage || this.state.error}
         </Text>
 
         <TouchableOpacity
           onPress={ (credentials) => {this.login(credentials)} }
         >
-          <Text style={styles.button}>LOGIN</Text>
+          <Text style={styles.button}>
+            Sign In
+          </Text>
         </TouchableOpacity>
 
+        <Text style={styles.registerText}>Don't have an account?</Text>
         <TouchableOpacity
           onPress={this.props.showRegisterView}
-          style={styles.link}
+          style={styles.registerLink}
         >
-          <Text>Register Now</Text>
+          <Text style={styles.registerLinkText}>Register Now</Text>
         </TouchableOpacity>
-
       </View>
     )
   }
@@ -98,6 +98,7 @@ class Login extends Component {
 
 Login.propTypes = {
   login: PropTypes.func,
+  loginMessage: PropTypes.string.isRequired,
   showRegisterView: PropTypes.func.isRequired,
 }
 

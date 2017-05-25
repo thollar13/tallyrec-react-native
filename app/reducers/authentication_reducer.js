@@ -5,6 +5,7 @@ const initialState = {
   authToken: null,
   loggedIn: false,
   hasRegisterLink: false,
+  loginMessage: '',
 }
 
 export const user = createReducer(state = initialState, {
@@ -13,6 +14,12 @@ export const user = createReducer(state = initialState, {
       ...state,
       authToken: action.authToken,
       loggedIn: true,
+    }
+  },
+  [types.LOGIN_ERROR](state, action) {
+    return {
+      ...state,
+      loginMessage: 'Login Error. Please try again.',
     }
   }
 })

@@ -6,9 +6,7 @@ import styles from './styles'
 class Register extends Component {
   render() {
     return (
-      <View>
-        <Text style={styles.h1}>Create Account</Text>
-
+      <View style={styles.loginWidth}>
         <View style={styles.inputBorder}>
           <TextInput
             style={styles.input}
@@ -28,15 +26,16 @@ class Register extends Component {
 
         <TouchableOpacity>
           <Text style={styles.button}>
-            REGISTER
+            Register
           </Text>
         </TouchableOpacity>
 
+        <Text style={styles.registerText}>Already have an account?</Text>
         <TouchableOpacity
           onPress={this.props.showLoginView}
-          style={styles.link}
+          style={styles.registerLink}
         >
-          <Text>Already registered? Login</Text>
+          <Text style={styles.registerLinkText}>Login Now</Text>
         </TouchableOpacity>
       </View>
     )

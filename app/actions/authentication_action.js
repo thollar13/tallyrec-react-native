@@ -27,6 +27,7 @@ export function login(phone_number, password) {
       Actions.drawer()
     }).catch( (ex) => {
       console.log('error at login: ' + ex)
+      dispatch(loginError())
     })
   }
 }
