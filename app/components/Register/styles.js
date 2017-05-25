@@ -2,13 +2,14 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   loginWidth: {
-    width: 300
+    width: 300,
   },
   button: {
     backgroundColor: '#FFF',
     color: '#333',
     fontWeight: '700',
-    height: 30,
+    height: 40,
+    lineHeight: 40,
     textAlign: 'center',
     borderRadius: 5
   },
@@ -54,8 +55,10 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   error: {
-    color: "#333",
-    textAlign: "center"
+    color: '#333',
+    textAlign: 'center',
+    marginBottom: 10,
+    backgroundColor: 'transparent',
   }
 })
 

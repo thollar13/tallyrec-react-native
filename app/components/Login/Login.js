@@ -54,6 +54,11 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.loginWidth}>
+
+        <Text style={styles.error}>
+          {this.props.loginMessage || this.state.error || " "}
+        </Text>
+
         <View style={styles.inputBorder}>
           <TextInput
             onChangeText={(number) => this.validatePhoneNumber(number)}
@@ -71,10 +76,6 @@ class Login extends Component {
             placeholder="Password"
           />
         </View>
-
-        <Text style={styles.error}>
-          {this.props.loginMessage || this.state.error}
-        </Text>
 
         <TouchableOpacity
           onPress={ (credentials) => {this.login(credentials)} }

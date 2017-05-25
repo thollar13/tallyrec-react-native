@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   tallyRecLogo: {
     width: 200,
     resizeMode: 'contain',
-    marginBottom: 30,
   },
 })
 

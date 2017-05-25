@@ -7,6 +7,9 @@ class Register extends Component {
   render() {
     return (
       <View style={styles.loginWidth}>
+
+        <Text style={styles.error}> </Text>
+
         <View style={styles.inputBorder}>
           <TextInput
             style={styles.input}
@@ -21,8 +24,6 @@ class Register extends Component {
             placeholder="Password"
           />
         </View>
-
-        <Text style={styles.error} />
 
         <TouchableOpacity>
           <Text style={styles.button}>
