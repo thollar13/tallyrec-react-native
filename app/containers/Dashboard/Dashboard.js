@@ -17,11 +17,14 @@ class Dashboard extends Component {
   render() {
     return (
       <View>
-        <Text>Team Dashboard</Text>
-        <Game />
-        <Text onPress={() => Actions.refresh({key: 'drawer', open: value => !value }) }>
+        <Text
+          onPress={() => Actions.refresh({key: 'drawer', open: value => !value }) }
+          style={{marginTop: 20}}
+        >
           Show Menu
         </Text>
+        <Text>Team Dashboard</Text>
+        <Game />
       </View>
     )
   }

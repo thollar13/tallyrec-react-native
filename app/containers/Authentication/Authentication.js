@@ -22,6 +22,10 @@ class Authentication extends Component {
     this.props.login(phone_number, password)
   }
 
+  componentDidMount = () => {
+    this.props.login("thomas@whiteboard.is", "thomas123")
+  }
+
   showRegisterView = () => {
     this.setState ({
       isRegistered: false
