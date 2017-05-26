@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
 
 import { Game } from '../../components'
+import globalStyles from '../../config/globalStyles'
 
 class Roster extends Component {
 
@@ -21,7 +22,7 @@ class Roster extends Component {
   render() {
     return (
       <View>
-        <Text style={{marginTop: 100}}>Roster</Text>
+        <Text style={globalStyles.breadcrumb}>Roster</Text>
       </View>
     )
   }

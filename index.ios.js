@@ -67,6 +67,7 @@ const App = () => (
             component={Dashboard}
             schema="sub"
             title=""
+            currentView=""
             navigationBarStyle={{backgroundColor: '#333'}}
             titleStyle={{color: '#FFF'}}
             renderLeftButton={MenuIcon}
@@ -74,7 +75,8 @@ const App = () => (
           <Scene
             key="schedule"
             component={Schedule}
-            title="Schedule"
+            title=""
+            currentView=""
             navigationBarStyle={{backgroundColor: '#333'}}
             titleStyle={{color: '#FFF'}}
             renderLeftButton={MenuIcon}
@@ -82,7 +84,8 @@ const App = () => (
           <Scene
             key="roster"
             component={Roster}
-            title="Roster"
+            title=""
+            currentView=""
             navigationBarStyle={{backgroundColor: '#333'}}
             titleStyle={{color: '#FFF'}}
             renderLeftButton={MenuIcon}
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
     color:'#FFF',
     backgroundColor:'#000',
     letterSpacing: 1,
-    display: 'flex'
+    display: 'flex',
   },
   barButtonTextStyle:{
     color:'#000',
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
   appHeaderMenuIcon: {
     width: 50,
     height: 15,
-    marginTop: 4,
+    marginTop: 8,
     resizeMode: 'contain',
   }
 })

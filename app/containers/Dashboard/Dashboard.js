@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
 
 import { Header, Login, Register, Game } from '../../components'
+
+import globalStyles from '../../config/globalStyles'
 import styles from './styles'
 
 class Dashboard extends Component {
@@ -18,16 +20,11 @@ class Dashboard extends Component {
   render() {
     return (
       <View>
-        <Text>Team Dashboard</Text>
-        <Text onPress={Actions.schedule}>Go to Schedule page</Text>
-        <Text onPress={Actions.roster}>Go to Roster page</Text>
+        <Text style={globalStyles.breadcrumb}>Dashboard</Text>
         <Game />
         <Text>
           The current scene is titled {this.props.default.scene.name}.
         </Text>
-        <Button onPress={() => {
-            Actions.schedule()
-        }} title="See Schedule" />
       </View>
     )
   }

@@ -8,6 +8,9 @@ import { ActionCreators } from '../../actions'
 
 import { Game, Header } from '../../components'
 
+import styles from './styles'
+import globalStyles from '../../config/globalStyles'
+
 class Schedule extends Component {
 
   constructor(props) {
@@ -17,7 +20,7 @@ class Schedule extends Component {
   render() {
     return (
       <View>
-        <Text style={{marginTop: 100}}>Schedule</Text>
+        <Text style={globalStyles.breadcrumb}>Schedule</Text>
       </View>
     )
   }
@@ -29,6 +32,7 @@ function mapDispatchToProps(dispatch) {
 
 export default connect((state) => {
   return {
-    loggedIn: state.loginUser
+    user: state.user,
+    default: state.default
   }
 }, mapDispatchToProps)(Schedule)
