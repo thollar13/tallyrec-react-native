@@ -14,10 +14,14 @@ class Roster extends Component {
     super(props)
   }
 
+  componentWillMount = () => {
+    Actions.refresh({key: 'drawer', open: value => !value});
+  }
+
   render() {
     return (
       <View>
-        <Text>Roster</Text>
+        <Text style={{marginTop: 100}}>Roster</Text>
       </View>
     )
   }

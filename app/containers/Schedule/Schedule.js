@@ -17,7 +17,7 @@ class Schedule extends Component {
   render() {
     return (
       <View>
-        <Text>Schedule</Text>
+        <Text style={{marginTop: 100}}>Schedule</Text>
       </View>
     )
   }

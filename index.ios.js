@@ -61,27 +61,33 @@ const App = () => (
         tabs={true}
         type={ActionConst.RESET}
       >
-        <Scene
-          key="dashboard"
-          component={Dashboard}
-          schema="sub"
-          title=""
-          navigationBarStyle={{backgroundColor: '#333'}}
-          titleStyle={{color: '#FFF'}}
-          renderLeftButton={MenuIcon}
-        />
-        <Scene
-          key="schedule"
-          component={Schedule}
-          title="Schedule"
-          renderBackButton={()=>(null)}
-        />
-        <Scene
-          key="roster"
-          component={Roster}
-          title="Roster"
-          renderBackButton={()=>(null)}
-        />
+        <Scene key="Scene" tabs={true}>
+          <Scene
+            key="dashboard"
+            component={Dashboard}
+            schema="sub"
+            title=""
+            navigationBarStyle={{backgroundColor: '#333'}}
+            titleStyle={{color: '#FFF'}}
+            renderLeftButton={MenuIcon}
+          />
+          <Scene
+            key="schedule"
+            component={Schedule}
+            title="Schedule"
+            navigationBarStyle={{backgroundColor: '#333'}}
+            titleStyle={{color: '#FFF'}}
+            renderLeftButton={MenuIcon}
+          />
+          <Scene
+            key="roster"
+            component={Roster}
+            title="Roster"
+            navigationBarStyle={{backgroundColor: '#333'}}
+            titleStyle={{color: '#FFF'}}
+            renderLeftButton={MenuIcon}
+          />
+        </Scene>
       </Scene>
     </RouterWithRedux>
   </Provider>
