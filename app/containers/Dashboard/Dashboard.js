@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text } from 'react-native'
-import { Actions } from 'react-native-router-flux';
+import { Image, View, Text, Button } from 'react-native'
+import { Actions, ActionConst } from 'react-native-router-flux';
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { ActionCreators } from '../../actions'
 
-import { Login, Register, Game } from '../../components'
+import { Header, Login, Register, Game } from '../../components'
+import styles from './styles'
 
 class Dashboard extends Component {
 
@@ -17,14 +18,16 @@ class Dashboard extends Component {
   render() {
     return (
       <View>
-        <Text
-          onPress={() => Actions.refresh({key: 'drawer', open: value => !value }) }
-          style={{marginTop: 20}}
-        >
-          Show Menu
-        </Text>
         <Text>Team Dashboard</Text>
+        <Text onPress={Actions.schedule}>Go to Schedule page</Text>
+        <Text onPress={Actions.roster}>Go to Roster page</Text>
         <Game />
+        <Text>
+          The current scene is titled {this.props.default.scene.name}.
+        </Text>
+        <Button onPress={() => {
+            Actions.schedule()
+        }} title="See Schedule" />
       </View>
     )
   }
@@ -36,6 +39,7 @@ function mapDispatchToProps(dispatch) {
 
 export default connect((state) => {
   return {
-    loggedIn: state.loginUser
+    user: state.user,
+    default: state.default
   }
 }, mapDispatchToProps)(Dashboard)

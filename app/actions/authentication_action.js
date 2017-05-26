@@ -23,8 +23,8 @@ export function login(phone_number, password) {
     }
     return Api.post('/auth', params).then(resp => {
       console.log(resp)
+      Actions.drawer({title:"Blood, Sweat & Beers"})
       dispatch(loginUser(resp.authToken))
-      Actions.drawer()
     }).catch( (ex) => {
       console.log('error at login: ' + ex)
       dispatch(loginError())

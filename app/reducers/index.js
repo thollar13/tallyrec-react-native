@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import routes from './routes'
 
 import * as authenticationReducer from './authentication_reducer'
+import * as routes from './routes'
 
 export default combineReducers(Object.assign(
   routes,
