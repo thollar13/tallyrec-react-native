@@ -15,10 +15,6 @@ class Roster extends Component {
     super(props)
   }
 
-  componentWillMount = () => {
-    Actions.refresh({key: 'drawer', open: value => !value});
-  }
-
   render() {
     return (
       <View>

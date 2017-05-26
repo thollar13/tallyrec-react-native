@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Image, View, Text, Button } from 'react-native'
+import { Image, ScrollView, View, Text, Button } from 'react-native'
 import { Actions, ActionConst } from 'react-native-router-flux';
 
 import { bindActionCreators } from 'redux'
@@ -21,10 +21,14 @@ class Dashboard extends Component {
     return (
       <View>
         <Text style={globalStyles.breadcrumb}>Dashboard</Text>
-        <Game />
-        <Text>
-          The current scene is titled {this.props.default.scene.name}.
-        </Text>
+        <ScrollView style={{marginBottom: 95}}>
+          <Game />
+          <Game />
+          <Game />
+          <Game />
+          <Game />
+          <Game />
+        </ScrollView>
       </View>
     )
   }
